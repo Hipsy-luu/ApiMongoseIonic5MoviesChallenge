@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="font-size: large;">
+      <i class="fas fa-question-circle pa-r-10"></i>
+      ¿Realmente desea salir?</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="full-height full-centered pa-tb-20">
+    <ion-row>
+      <ion-col class="col-12">
+        <ion-button (click)="dismissModalLogout()" class="blu-100-btn" color="danger" type="submit">
+          <ion-icon name="close-outline"></ion-icon>Cancelar
+        </ion-button>
+      </ion-col>
+      <ion-col class="col-12">
+        <ion-button (click)="logOut()" class="blu-100-btn" type="submit">
+          <ion-icon name="log-out-outline" ></ion-icon>Cerrar Sesión
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

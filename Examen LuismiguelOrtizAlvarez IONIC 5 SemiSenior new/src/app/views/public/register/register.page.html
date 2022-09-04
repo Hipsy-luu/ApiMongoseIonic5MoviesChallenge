@@ -1,0 +1,203 @@
+<ion-content>
+  <div class="background-gif">
+
+  </div>
+  <div>
+    <ion-grid class="floating-info">
+      <ion-row class="" style="padding: 5px;">
+        <ion-col size="12" class="full-centered">
+          <img class="" src="/assets/images/logos/full_logo_movies.png">
+        </ion-col>
+      </ion-row>
+      <ion-row class="p-b-20 p-t-10 white-color">
+        <ion-col size="12" class="full-centered ">
+          <div class="floating-card">
+            <div class="card-box">
+              <form [formGroup]="registerUserForm" (ngSubmit)="registerClient()" class="full-width">
+                <ion-row class="full-width">
+                  <ion-col size="12" class="full-left">
+                    <ion-item class="item-style full-width">
+                      <ion-label position="floating">Nombre</ion-label>
+                      <ion-input formControlName="firstName" type="text" class="text-capitalize"></ion-input>
+                    </ion-item>
+
+                    <ion-item *ngIf="firstName.invalid && firstName.touched" class="item-style form-error" lines="none">
+                      <ion-text *ngIf="firstName.errors.required" color="danger">
+                        Nombre requerido.
+                      </ion-text>
+                      <ion-text *ngIf="firstName.errors.minlength" color="danger">
+                        El nombre debe contener por lo menos 1 caracteres.
+                      </ion-text>
+                      <ion-text *ngIf="firstName.errors.forbiddenName" color="danger">
+                        El nombre cannot be Bob.
+                      </ion-text>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+                <ion-row class="full-width">
+                  <ion-col size="12" class="full-left">
+                    <ion-item class="item-style full-width">
+                      <ion-label position="floating">Apellido Paterno</ion-label>
+                      <ion-input formControlName="lastName" type="text" class="text-capitalize"></ion-input>
+                    </ion-item>
+
+                    <ion-item *ngIf="lastName.invalid && lastName.touched" class="item-style form-error" lines="none">
+                      <ion-text *ngIf="lastName.errors.required" color="danger">
+                        Apellido paterno requerido.
+                      </ion-text>
+                      <ion-text *ngIf="lastName.errors.minlength" color="danger">
+                        El apellido paterno debe contener por lo menos 1 caracteres.
+                      </ion-text>
+                      <ion-text *ngIf="lastName.errors.forbiddenName" color="danger">
+                        El apellido paterno cannot be Bob.
+                      </ion-text>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row class="full-width">
+                  <ion-col size="12" class="full-left">
+                    <ion-item  class="item-style full-width">
+                      <ion-label position="floating" class="white-color">Correo</ion-label>
+                      <ion-input formControlName="email" type="email"></ion-input>
+                    </ion-item>
+
+                    <ion-item *ngIf="email.invalid && email.touched" class="item-style form-error" lines="none">
+                      <ion-text *ngIf="email.errors.required" color="danger">
+                        Email requerido.
+                      </ion-text>
+                      <ion-text *ngIf="email.errors.forbiddenName || email.errors.email" color="danger">
+                        El email es invalido.
+                      </ion-text>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row class="full-width">
+                  <ion-col size="12" class="full-left">
+                    <ion-item  class="item-style full-width">
+                      <ion-label position="stacked" class="white-color">Teléfono</ion-label>
+                      <input matInput [clearIfNotMatch]="true" [showMaskTyped]="true" mask="000-000-0000" style="border-bottom: 0px;"
+                          type="tel" class="form-control" name="phone" placeholder="000-000-0000" formControlName="phone">
+                    </ion-item>
+
+                    <ion-item *ngIf="phone.invalid && phone.touched" class="item-style form-error" lines="none">
+                      <ion-text *ngIf="phone.errors.required" color="danger">
+                        Teléfono requerido.
+                      </ion-text>
+                      <ion-text *ngIf="phone.errors.minlength" color="danger">
+                        El teléfono debe contener por lo menos 10 caracteres.
+                      </ion-text>
+                      <ion-text *ngIf="phone.errors.forbiddenName" color="danger">
+                        El teléfono cannot be Bob.
+                      </ion-text>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row class="full-width">
+                  <ion-col size="12" class="full-left">
+                      <fiv-password-input
+                        placeholder="Contraseña"
+                        formControlName="password"
+                        class="item-style full-width"
+                      ></fiv-password-input>
+
+                    <ion-item *ngIf="password.invalid && password.touched" class="item-style form-error" lines="none">
+                      <ion-text *ngIf="password.errors.required" color="danger">
+                        Contraseña requerida.
+                      </ion-text>
+                      <ion-text *ngIf="password.errors.minlength" color="danger">
+                        La contraseña debe contener por lo menos 4 caracteres.
+                      </ion-text>
+                      <ion-text *ngIf="password.errors.forbiddenName" color="danger">
+                        La contraseña cannot be Bob.
+                      </ion-text>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row class="full-width">
+                  <ion-col size="12" class="full-left">
+                      <fiv-password-input
+                        placeholder="Confirmar contraseña"
+                        formControlName="confirmPassword"
+                        class="item-style full-width"
+                      ></fiv-password-input>
+
+                      <ion-item *ngIf="confirmPassword.invalid && confirmPassword.touched" class="item-style form-error" lines="none">
+                        <ion-text *ngIf="confirmPassword.errors.required" color="danger">
+                          Contraseña requerida.
+                        </ion-text>
+                        <ion-text *ngIf="confirmPassword.errors.minlength" color="danger">
+                          La contraseña debe contener por lo menos 4 caracteres.
+                        </ion-text>
+                        <ion-text *ngIf="confirmPassword.errors.forbiddenName" color="danger">
+                          La contraseña cannot be Bob.
+                        </ion-text>
+
+                        <!-- <ion-text *ngIf="confirmPassword.value.toString() != password.value.toString()" color="danger">
+                          Las contraseñas no coinciden.
+                        </ion-text> -->
+                      </ion-item>
+                      <ion-item *ngIf="confirmPassword.value.toString() != password.value.toString() && confirmPassword.touched" class="item-style form-error" lines="none">
+                        <ion-text color="danger">
+                          Las contraseñas no coinciden.
+                        </ion-text>
+                      </ion-item>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row class="full-width">
+                  <ion-col size="10" class="full-left">
+                    <ion-item  class="item-style full-width">
+                      <ion-label text-wrap style="font-size: smaller"class="white-color">
+                        <a href="http://web-test.gawi.mx/#/privacy-policies" target="_blank">
+                          Acepto los términos y condiciones.
+
+                        </a>
+                      </ion-label>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col size="2" class="full-centered no-padding">
+                    <ion-item  class="item-style full-width full-centered">
+                      <ion-checkbox formControlName="checkTerms"></ion-checkbox>
+                    </ion-item>
+
+                    <ion-item *ngIf="checkTerms.invalid && checkTerms.touched"
+                      class="item-style form-error" lines="none" style="top: -17px; left: -147px; position: absolute;">
+                      <ion-text *ngIf="checkTerms.errors.required" color="danger">
+                          Por favor acepta los términos.
+                      </ion-text>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col size="12">
+                    <ion-button [disabled]="registerUserForm.invalid || confirmPassword.value != password.value"
+                     class="green-100-btn" type="submit">
+                      Registrarme
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+              </form>
+
+              <ion-row>
+                <ion-col size="12">
+                  <ion-button routerLink="/login" routerDirection="back" class="blu-100-btn"
+                    style="--background: #626a7b;">
+                    Ya tengo una cuenta
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </div>
+
+  <app-info-reserved-footer></app-info-reserved-footer>
+</ion-content>

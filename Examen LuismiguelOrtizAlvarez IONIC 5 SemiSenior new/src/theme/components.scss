@@ -1,0 +1,13 @@
+//PAGES
+    //Dashboard Admin
+
+    //PUBLIC
+@import './components/navigation-public';
+@import './components/footer-public';
+@import './components/tiny-components';
+@import './components/modals';
+
+//Personalized css for selectable-component
+.ionic-selectable-cover:focus {
+    background-color: rgb(213,226,225 , 0.80%) !important;
+}

@@ -1,0 +1,19 @@
+.label-card{
+    position: absolute;
+    bottom: 0;
+    background: rgb(0 0 0 / 40%);
+    width: 100%;
+    /* color: whitesmoke; */
+
+    ion-card-title{
+        color: whitesmoke;
+    }
+}
+ion-card-title{
+    font-size: 1em;
+}
+.item-style {
+    --border-color: transparent !important;
+    --background: transparent !important;
+    --highlight-background: transparent !important;
+}

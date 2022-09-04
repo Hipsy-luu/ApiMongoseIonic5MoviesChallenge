@@ -1,0 +1,111 @@
+<app-nav-bar-client></app-nav-bar-client>
+
+<ion-content class="bg-color">
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12">
+                <ion-title class="white-color full-right">
+                    <h2><strong>Bienvenido</strong></h2>
+                </ion-title>
+            </ion-col>
+            <ion-col size="12">
+                <ion-title class="white-color text-capitalize full-right">
+                    <h4>{{dataSessionService.actualUser.firstName}}</h4>
+                </ion-title>
+            </ion-col>
+        </ion-row>
+        <ion-card>
+            <ion-row class="pa-t-10">
+                <ion-col size="9">
+                    <ion-title>Películas disponibles</ion-title>
+                </ion-col>
+                <ion-col size="3" class="full-right">
+                    <ion-title>
+                        <ion-icon name="videocam-outline"></ion-icon>
+                    </ion-title>
+                </ion-col>
+                <ion-col size="10">
+                    <ion-item class="item-style full-width">
+                        <ion-label class="pa-r-10">
+                            Buscar
+                        </ion-label>
+                      <ion-input [(ngModel)]="searchText" ></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col size="2" class="full-centered no-padding">
+                    <ion-button (click)="loadDataBySearch()">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </ion-button>
+                </ion-col>
+
+                <ion-col size="12">
+                    <ion-item>
+                        <ion-label>
+                            Tamaño de página
+                        </ion-label>
+                        <ion-select (ionChange)="setPageSize($event)" [value]="pageSize.toString()" okText="Aceptar"
+                            cancelText="Cancelar" class="full-width">
+                            <ion-select-option value=6>6</ion-select-option>
+                            <ion-select-option value=9>9</ion-select-option>
+                            <ion-select-option value=12>12</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-card>
+
+
+        <ion-row>
+            <ion-col  size="4" *ngFor="let movie of movieList | slice : (page - 1) * pageSize : (page - 1) * pageSize + pageSize;index as i">
+                <ion-card (click)="openFullMovieData(movie)" routerDirection="forward" class="full-width full-centered no-margin" style="height: 190px;">
+                    <!-- <ion-card routerLink="/faq" routerDirection="forward" class="full-width" style="height: inherit;"> -->
+                    <ion-img *ngIf="movie._embedded.show.image" style="position: absolute;" [src]="movie._embedded.show.image.original"></ion-img>
+                    <ion-img *ngIf="movie._embedded.show.image == null" style="position: absolute;" 
+                        src="./assets/images/logos/full_logo_movies.png"></ion-img>
+                    <ion-card-header class="label-card">
+                        <!-- <ion-card-title class="full-left">
+                            <strong>
+                                ¿Ya conoces nuestro medidor de GAS?
+                            </strong>
+                        </ion-card-title> -->
+
+                        <ion-card-title class="full-left">
+                            {{movie._embedded.show.name}}
+                        </ion-card-title>
+                    </ion-card-header>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+
+        <!-- PAGINADOR -->
+        <ion-row *ngIf="movieList.length > pageSize">
+            <ion-col class="full-left">
+                <ion-card>
+                    <ngb-pagination size="sm" [collectionSize]="movieList.length" [(page)]="page" [boundaryLinks]="true"
+                        [pageSize]="pageSize" class="pa-t-20 pagination-gawi">
+                        <ng-template ngbPaginationPages let-page let-pages="pages">
+                            <li class="ngb-custom-pages-item" style="font-size: 19px;" *ngIf="pages.length > 0">
+                                <div class="form-group d-flex flex-nowrap px-2 no-margin pagination-selector">
+                                    <label id="paginationInputLabel" for="paginationInput2"
+                                        class="col-form-label mr-2 ml-1" style="color: black;">página</label>
+                                    <input #i disabled type="text" inputmode="numeric" pattern="[0-9]*"
+                                        class="form-control custom-pages-input full-centered no-margin"
+                                        id="paginationInput2" [value]="page" (keyup.enter)="selectPage(i.value)"
+                                        (blur)="selectPage(i.value)" (input)="formatInput($any($event).target)"
+                                        aria-labelledby="paginationInputLabel paginationDescription"
+                                        style="width: 2.5rem" />
+                                    <span id="paginationDescription" class="col-form-label text-nowrap px-2">
+                                        de {{pages.length}}
+                                    </span>
+                                </div>
+                            </li>
+                        </ng-template>
+                    </ngb-pagination>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+
+
+<app-info-reserved-footer class="bg-color"></app-info-reserved-footer>

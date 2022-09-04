@@ -1,0 +1,30 @@
+<ion-header class="nav-bar-client ion-no-border">
+  <ion-toolbar>
+    <div class="background-nav-gif" style="left: 0px; ">
+    </div>
+
+    <ion-title slot="start" class="no-padding z-1">
+      <ion-grid class="no-padding">
+        <ion-row>
+          <ion-col size="6" class="full-left no-padding pa-l-10">
+            <img src="./assets/images/logos/full_logo_movies.png">
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-title>
+
+    <ion-title  slot="end" class="no-padding">
+      <ion-grid class="no-padding">
+        <ion-row>
+          <ion-col size="7" class="full-left no-padding">
+          </ion-col>
+          <ion-col size="5" class="full-centered no-padding">
+            <ion-button (click)="presentModalLogout()" fill="clear" color="light">
+              <ion-icon slot="icon-only" name="log-out-outline" ></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>

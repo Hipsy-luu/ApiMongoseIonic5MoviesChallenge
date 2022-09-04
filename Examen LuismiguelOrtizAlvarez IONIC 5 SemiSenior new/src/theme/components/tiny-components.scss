@@ -1,0 +1,40 @@
+.loading-class-theme{
+    color: whitesmoke;
+    .loading-wrapper.sc-ion-loading-md{
+        background: url("/assets/images/backgrounds/ezgif.com-gif-maker.gif");
+        /* Resource from */
+        /* https://giphy.com/gifs/awesome-circle-loading-WiIuC6fAOoXD2 */
+        background-position: center;
+        background-size: 160px;
+        background-repeat: no-repeat;
+        background-color: rgba(1,3,20,0.7);
+        background-position-y: top;
+
+        position: relative;
+        top: 15px;
+        font-weight: 800;
+        font-size: initial;
+        z-index: 9999;
+        border-radius: 2px;
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 155px;
+        padding-bottom: 7px;
+        -webkit-box-shadow: 0 16px 20px rgb(0 0 0 / 40%);
+        box-shadow: 0 16px 20px rgb(0 0 0 / 40%);
+    }
+}
+
+.ingmulti-toast {
+    color: whitesmoke;
+    --background: #4e5767;
+    font-size: medium;
+    font-weight: 600 !important;
+    
+    .toast-header {
+        margin-bottom: 2px;
+        font-weight: 700;
+        line-height: 20px;
+        font-size: medium;
+    }
+}

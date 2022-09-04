@@ -1,0 +1,14 @@
+
+.logout-client-modal-class .modal-wrapper {
+    height: 40%;
+    width: 95%;
+   /*  bottom: 50%; */
+    /* top: 50%; */
+    position: absolute; 
+    display: block;  
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+    --ion-safe-area-top: 0px;
+    --ion-safe-area-bottom: 0px;
+    --ion-safe-area-right: 0px;
+    --ion-safe-area-left: 0px;
+ }

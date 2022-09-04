@@ -1,0 +1,307 @@
+@import "./variable";
+
+.left-sidebar{
+    z-index: 45;
+}
+// In this scss you can overwrite all our scss, we suggested you to add your scss into this, so whenever the update comes it will not affect your code.
+/*Footer-stays-bot*/
+.stays-bottom {
+    bottom: 0;
+    width: 100%;
+}
+/*  backgrounds  */
+.bg-account {
+    background-color: $bg-color;
+}
+
+//font sizes
+b,
+strong {
+    font-weight: bold;
+}
+
+.fs-1-em {
+    font-size: 1em;
+}
+
+.center-content {
+    place-content: center;
+}
+
+.color-white {
+    color: #ffffff !important;
+}
+
+//alineaciones
+.tx-a-r {
+    text-align: right;
+}
+
+//borders
+.pa-10-0 {
+    padding: 5px 0px !important;
+}
+
+.ma-10-0 {
+    margin: 10px 0px;
+}
+
+//content sizes
+
+.no-margin {
+    margin: 0px;
+}
+
+.no-padding {
+    padding: 0px !important;
+}
+
+.auto-width {
+    width: auto !important;
+}
+
+.max-w-500 {
+    max-width: 500px;
+}
+
+.text-grey {
+    color: #8e959d !important;
+}
+
+a.text-dark:hover,
+a.text-dark:focus {
+    color: $orange !important;
+}
+
+.validation-label {
+    width: 100%;
+    font-size: small;
+    color: #e36868;
+    text-align: justify;
+}
+
+//Buttons
+
+//MultiDropdown
+.event-types .multiselect-dropdown .dropdown-btn .selected-item {
+    border: 1px solid #fa5526 !important;
+    background: #fa5526 !important;
+    color: #fff !important;
+    margin: 4px 0px;
+}
+
+.multiselect-dropdown .dropdown-btn .selected-item {
+    border: 1px solid #ffffff !important;
+    margin-right: 4px !important;
+    background: #ffffff !important;
+    padding: 0 5px !important;
+    color: #3e5569 !important;
+    border-radius: 2px !important;
+    float: left !important;
+}
+.multiselect-dropdown .dropdown-btn .selected-item:hover {
+    box-shadow: initial !important;
+}
+.dropdown-btn {
+    font-size: 1.4em !important;
+    background-color: transparent;
+    border: transparent;
+    transition: 0.3s ease-in-out;
+}
+.multiselect-dropdown .dropdown-btn {
+    display: inline-block !important;
+    border: 1px solid #e9ecef !important;
+    width: 100% !important;
+    padding: 0px 12px !important;
+    margin-bottom: 0 !important;
+    font-weight: inherit !important;
+    line-height: 1.52857143 !important;
+    text-align: left !important;
+    vertical-align: middle !important;
+    cursor: pointer !important;
+    background-image: none !important;
+    border-radius: 4px !important;
+    font-size: 1.4em !important;
+}
+//CAROUSEL
+.carousel-control-next,
+.carousel-control-prev {
+    background-color: #d8d4d4;
+}
+
+.owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+}
+
+.owl-next {
+    position: absolute;
+    right: 0px;
+}
+
+.owl-prev {
+    position: absolute;
+    left: 0px;
+}
+
+// LOADING ANIMATION
+
+.loader-btn {
+    max-height: 12px;
+    font-size: 3px !important;
+    margin: 8px auto !important;
+}
+
+.loader,
+.loader:before,
+.loader:after {
+    background: #ffffff;
+    -webkit-animation: load1 1s infinite ease-in-out;
+    animation: load1 1s infinite ease-in-out;
+    width: 1em;
+    height: 4em;
+}
+.loader {
+    color: #ffffff;
+    text-indent: -9999em;
+    margin: 88px auto;
+    position: relative;
+    font-size: 11px;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+    position: absolute;
+    top: 0;
+    content: "";
+}
+.loader:before {
+    left: -1.5em;
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+.loader:after {
+    left: 1.5em;
+}
+@-webkit-keyframes load1 {
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 0;
+        height: 4em;
+    }
+    40% {
+        box-shadow: 0 -2em;
+        height: 5em;
+    }
+}
+@keyframes load1 {
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 0;
+        height: 4em;
+    }
+    40% {
+        box-shadow: 0 -2em;
+        height: 5em;
+    }
+}
+
+.loader-actions,
+.loader-actions:before,
+.loader-actions:after {
+    background: #e54d22;
+    -webkit-animation: load12 1s infinite ease-in-out;
+    animation: load12 1s infinite ease-in-out;
+    width: 1em;
+    height: 4em;
+}
+.loader-actions {
+    color: #e54d22;
+    text-indent: -9999em;
+    margin: 88px auto;
+    position: relative;
+    font-size: 21px;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+.loader-actions:before,
+.loader-actions:after {
+    position: absolute;
+    top: 0;
+    content: "";
+}
+.loader-actions:before {
+    left: -1.5em;
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+.loader-actions:after {
+    left: 1.5em;
+}
+@-webkit-keyframes load12 {
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 0;
+        height: 4em;
+    }
+    40% {
+        box-shadow: 0 -2em;
+        height: 5em;
+    }
+}
+@keyframes load12 {
+    0%,
+    80%,
+    100% {
+        box-shadow: 0 0;
+        height: 4em;
+    }
+    40% {
+        box-shadow: 0 -2em;
+        height: 5em;
+    }
+}
+
+/* modal animation */
+.modal-content {
+    animation-name: showmodal;
+    animation-duration: 0.3s;
+}
+
+@keyframes showmodal {
+    0% {
+        transform: scale(0.5);
+    }
+    75% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pagination-gawi .form-group {
+    background-color: white;
+}
+
+/* .modal-content-dismiss{
+  animation-name: dismiss;
+  animation-duration: 0.3s;
+}
+
+@keyframes dismiss {
+  0%   {transform: scale(1.1)}
+  75%  {transform: scale(1)}
+  100% {transform: scale(0.5)}
+} */

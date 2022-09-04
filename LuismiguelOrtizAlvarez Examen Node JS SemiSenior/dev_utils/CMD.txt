@@ -1,0 +1,4 @@
+kill all node by using following command
+    >>killall node
+start nodemon by using following comand
+    >>nodemon server.js

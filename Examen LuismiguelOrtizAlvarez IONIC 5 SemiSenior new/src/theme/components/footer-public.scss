@@ -1,0 +1,70 @@
+@import '../variable';
+
+.footer, .text-center{
+    color: $gray-300;
+}
+.footer{
+    background-color: rgba(11, 22, 48, 0.9);
+
+    .footer-txt{
+        color: $gray-300;
+    }
+    
+    .footer-normal-txt{
+        color: $gray-300;
+    }
+    .responsive-width{
+        padding-top: 30px;
+        padding-bottom: 30px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        ul{
+            padding: 0;
+            list-style: none;
+            li a{
+                transition: all .3s ease-in-out;
+                &:hover{
+                    color: $gray-500;
+                    opacity: .7;
+                    text-decoration: none;
+                    transform: scale(1.2);
+                }
+            }
+            .social{
+                font-size: 30px;
+                color: $gray-100;
+                padding: 5px;
+                transition: .3s ease-in-out;
+                &:hover{
+                    color: $gray-500;
+                    opacity: .7;
+                }
+            }
+        }
+        .line{
+            display: none;
+            width: 100%;
+            height: 2px;
+            background-color: rgba(128, 128, 128, 0.5);
+        }
+        .one, .two{
+            width: 20%;
+        }
+        .three{
+            width: 40%;
+            text-align: end;
+            .app-img{
+                max-height: 70px;
+            }
+        }
+    }
+    img{
+        max-width: 200px;
+    }
+}
+.small-footer{
+    background-color: rgba(128, 128, 128, 0.3);
+    border-top: solid 1px rgba(128, 128, 128, 0.8);
+    text-align: center;
+}

@@ -1,0 +1,5 @@
+ Comando para poder compilar la app y mandarla a un dispositivo conectado
+        >> ionic cordova run android --device
+
+Ver la lista de dispositivos disponibles conectados
+        >> adb devices

@@ -1,0 +1,79 @@
+.background-gif {
+    /* background: url("/assets/images/dot-pat.png"); */
+    width: 100%;
+    height: -webkit-fill-available;
+    background: url("/assets/images/backgrounds/diagonal-waves.gif");
+    /* Resource from */
+    /* https://giphy.com/gifs/black-abstract-landscape-DIouyQ9xdybpAmRUVI */
+    position: fixed;
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    top: 0px;
+}
+.background-gif-fixed {
+    background-attachment: fixed;
+    height: auto;
+}
+.background-gif::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(7, 13, 28, 0.74);
+}
+/*Form-style*/
+.floating-card {
+    width: 95%;
+    background-color: rgba(93, 99, 106, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: auto;
+    //position: absolute;
+    //top: 60%;
+    //left: 50%;
+    //transform: translate(-50%, -50%);
+    .card-box {
+        width: 90%;
+        margin: auto;
+        padding: 20px 0;
+    }
+    form .item-style {
+        --border-color: transparent !important;
+        --background: transparent !important;
+        --highlight-background: transparent !important;
+    }
+}
+.floating-info {
+    width: 100%;
+    margin: auto;
+    height: 100%;
+    p {
+        text-align: center;
+    }
+    img {
+        width: 100%;
+        /* max-height: 90px; */
+        height: 100%;
+        max-width: 140px;
+    }
+}
+
+.form-error {
+    font-size: 12px;
+    position: absolute;
+    right: 10%;
+}
+
+.form-error-pass {
+    font-size: 12px;
+    position: fixed;
+    right: 24%;
+}
+
+ion-item {
+    --border-color: transparent;
+}
+/*end form-style*/

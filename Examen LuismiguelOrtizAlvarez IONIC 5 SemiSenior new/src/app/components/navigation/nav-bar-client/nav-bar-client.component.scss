@@ -1,0 +1,31 @@
+.background-nav-gif {
+    /* background: url("/assets/images/dot-pat.png"); */
+    width: 100%;
+    height: -webkit-fill-available;
+    background: url("/assets/images/backgrounds/diagonal-waves.gif");
+    /* Resource from */
+    /* https://giphy.com/gifs/black-abstract-landscape-DIouyQ9xdybpAmRUVI */
+    position: fixed;
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    top: 0px;
+}
+.background-nav-gif-fixed {
+    background-attachment: fixed;
+    height: auto;
+}
+.background-nav-gif::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(7, 13, 28, 0.74);
+}
+.nav-bar-client ion-toolbar img {
+    width: 80%;
+    border-radius: 25px;
+    padding: 5px;
+}
